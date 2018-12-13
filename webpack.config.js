@@ -8,10 +8,12 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   context: __dirname,
-  entry: {main: './js/main.js'},
+  entry: {
+    main: './js/main.js',
+  },
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -23,17 +25,13 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              localIdentName: '[name]--[local]',
               modules: true,
-              sourceMap: true,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['css'],
-              outputStyle: 'expanded',
-              sourceMap: true,
+              includePaths: [ path.join(__dirname, 'css') ],
             },
           },
         ],

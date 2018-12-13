@@ -1,5 +1,5 @@
-# Build directory
-build/
+# Bundle directory
+dist/
 
 # Logs
 logs
